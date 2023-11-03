@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Sometype+Mono:ital,wght@1,500&display=swap");
+.home-wrapper {
+  width: 100%;
+  height: auto;
+  min-height: 80vh;
+}
+.home-wrapper h3 {
+  text-align: center;
+  margin: 0.5rem 0rem;
+  /* font-family: "Dosis", sans-serif; */
+  font-family: "Sometype Mono", monospace;
+  font-size: 20px;
+}
+
+.items {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.item {
+  margin-bottom: 2rem;
+  width: 29%;
+  height: auto;
+}
+.item img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+}
+.itCred {
+  position: relative;
+  min-height: 80px;
+}
+.itCred h3 {
+  margin-left: 2%;
+  font-size: 16px;
+  min-height: 40px;
+  overflow: hidden;
+}
+.itCred h4 {
+  letter-spacing: 1px;
+  margin-left: 15%;
+  font-size: 20px;
+  font-family: "Dosis", sans-serif;
+}
+
+.btnCred1 {
+  position: absolute;
+  right: 1%;
+  bottom: 3%;
+  padding: 6px;
+  font-family: "Dosis", sans-serif;
+  border: 2px solid rgb(213, 48, 48);
+  border-radius: 14%;
+}
+.itCred button:hover {
+  background-color: rgb(66, 63, 83);
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 650px) {
+  .storeItem {
+    margin-bottom: 2rem;
+    width: 55%;
+  }
+}
+@media only screen and (min-width: 651px) and (max-width: 900px) {
+  .storeItem {
+    margin-bottom: 2rem;
+    width: 40%;
+  }
+}

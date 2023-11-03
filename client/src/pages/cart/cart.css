@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Sometype+Mono:ital,wght@1,500&display=swap");
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(187, 138, 138);
+}
+.top-cart-header {
+  text-align: center;
+  font-family: "Sometype Mono", monospace;
+  margin-top: 0.5rem;
+  width: 70%;
+  border-bottom: 1px dotted rgb(213, 48, 48);
+  padding-bottom: 5px;
+}
+.cart-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+}
+.cartItem {
+  /* font-family: "Dosis", sans-serif; */
+  font-family: "Sometype Mono", monospace;
+  height: 220px;
+  position: relative;
+  border: 1px solid rgb(213, 48, 48);
+  border-radius: 7px;
+  margin-bottom: 0.5rem;
+}
+.cart-logic {
+  font-size: 15px;
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 180px;
+  overflow-y: scroll;
+  overflow: auto;
+  display: flex;
+  background-color: honeydew;
+  position: relative;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-cart {
+  width: 20%;
+}
+.cartItem img {
+  width: 100%;
+  background-size: cover;
+  height: 198px;
+}
+.middle-cart {
+  width: 60%;
+}
+.right-cart {
+  width: 10%;
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+}
+.bottom-cart {
+  position: absolute;
+  bottom: 3%;
+  width: 78%;
+  left: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: 20px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.bottom-left button {
+  padding: 3px 10px;
+  color: rgb(213, 48, 48);
+  font-weight: bolder;
+  cursor: pointer;
+  outline: 0;
+  border: 1px solid rgb(213, 48, 48);
+}
+.bottom-left button:hover {
+  background-color: rgb(187, 138, 138);
+  transition: 0.4s;
+}
+.bottom-right button {
+  padding: 3px 20px;
+  background-color: seagreen;
+  border: none;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 16px;
+  cursor: pointer;
+}
+.bottom-right button:nth-child(1) {
+  background-color: rgb(213, 48, 48);
+}
+
+.bottom-right button:hover {
+  background-color: green;
+  transition: 0.4s;
+}
+.bottom-right button:hover:nth-child(1) {
+  background-color: rgb(181, 82, 82);
+  transition: 0.4s;
+}
+.bottom-right input {
+  width: 40px;
+  border: 1px solid rgb(187, 138, 138);
+  padding: 3px 0px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Dosis", sans-serif;
+  outline: 0;
+}
+.cartCheckout {
+  width: 20%;
+  background-color: honeydew;
+  height: 250px;
+  border: 1px solid rgb(213, 48, 48);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Dosis", sans-serif;
+}
+.cartCheckout h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  border-bottom: 1px solid rgb(213, 48, 48);
+}
+.cartCheckout button {
+  padding: 10px;
+  color: white;
+  background-color: seagreen;
+  border: none;
+  font-size: 18px;
+  width: 97%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cartCheckout button:hover {
+  background-color: green;
+  transition: 0.4s;
+}
+
+/*nothing on the cart yet*/
+.nothing-cart {
+  width: 100%;
+  height: auto;
+  font-family: "Dosis", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nothing-cart h3 {
+  margin: 1rem 0rem;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+.nothing-cart button {
+  font-family: "Dosis", sans-serif;
+  padding: 5px 15px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.nothing-cart img {
+  width: 300px;
+}

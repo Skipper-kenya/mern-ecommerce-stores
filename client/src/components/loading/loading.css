@@ -1,0 +1,25 @@
+.loading-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+.circle {
+  width: 80px;
+  height: 80px;
+  border: 5px solid white;
+  border-top-color: rgb(213, 48, 48);
+  border-radius: 50%;
+  animation: rot 1s linear infinite;
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
