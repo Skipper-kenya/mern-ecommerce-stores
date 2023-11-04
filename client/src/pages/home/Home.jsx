@@ -6,6 +6,7 @@ import "./home.css";
 import Loading from "../../components/loading/Loading";
 import { storeContext } from "../../context/StoreProvider";
 const Home = () => {
+  //import context items
   const { loading, stores, cart, addToCart, removeFromCart } =
     useContext(storeContext);
 
