@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./cart.css";
 
 import { storeContext } from "../../context/StoreProvider";
@@ -12,8 +12,17 @@ import axios from "axios";
 const Cart = () => {
   const navigate = useNavigate();
 
-  const { items, stores, cart, totalPrice, deliveryItems } =
-    useContext(storeContext);
+  const {
+    cookie,
+    items,
+    stores,
+    cart,
+    totalPrice,
+    deliveryItems,
+    setIsUserRedirected,
+  } = useContext(storeContext);
+
+  const [loading, setLoading] = useState(false);
 
   const cartArr = Object.values(cart);
 
@@ -24,26 +33,37 @@ const Cart = () => {
   const handleCheckout = async () => {
     try {
       //code to export items array with several objects of items qty and id
+      setLoading(true);
       for (let key in deliveryItems) {
         if (deliveryItems[key] > 0) {
           items.push({ id: Number(key), quantity: Number(deliveryItems[key]) });
         }
+      }
 
-        try {
-          const response = await axios.post(process.env.REACT_APP_STRIPE_URL, {
-            items,
-          });
+      try {
+        const response = await axios.post(process.env.REACT_APP_STRIPE_URL, {
+          items,
+        });
 
-          const { url } = response.data;
+        const { url } = await response.data;
 
-          window.location.href = url;
-        } catch (error) {
-          console.log("error at checkout(client)");
+        if (url) {
+          window.location = url;
         }
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        console.log("error at checkout(client)");
       }
     } catch (error) {
+      setLoading(false);
       console.log("error at checkout btn(client)");
     }
+  };
+
+  const handleRedirect = () => {
+    setIsUserRedirected(true);
+    navigate("/login");
   };
 
   return (
@@ -66,7 +86,13 @@ const Cart = () => {
             <div className="cartCheckout">
               <h3>Cart Summary</h3>
               <h4>SubTotal : ${totalPrice} </h4>
-              <button onClick={handleCheckout}>Checkout $({totalPrice})</button>
+              {cookie.auth_token ? (
+                <button onClick={handleCheckout}>
+                  {loading ? "Processing..." : <> Checkout $({totalPrice})</>}
+                </button>
+              ) : (
+                <button onClick={handleRedirect}>Login to Checkout</button>
+              )}
             </div>
           </div>
         </>

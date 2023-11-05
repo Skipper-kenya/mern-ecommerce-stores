@@ -31,9 +31,12 @@ const StoreProvider = ({ children }) => {
 
   const [checkOutItems, setCheckOutItems] = useState([]);
 
+  const [isUserRedirected, setIsUserRedirected] = useState(false);
+
   //the actual items to be delivered to the backend
   const [finalCheckout, setFinalCheckout] = useState([]);
   const items = [];
+
   useEffect(() => {
     const fetchItems = async () => {
       setLoading(true);
@@ -114,6 +117,8 @@ const StoreProvider = ({ children }) => {
     setCheckOutItems,
     finalCheckout,
     setFinalCheckout,
+    isUserRedirected,
+    setIsUserRedirected,
   };
 
   return (

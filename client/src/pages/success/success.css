@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Sometype+Mono:ital,wght@1,500&display=swap");
+.success-wrapper {
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.succ-cont {
+  display: flex;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Dosis", sans-serif;
+}
+.succ-cont h3 {
+  margin: 0.5rem 0rem;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+.succ-cont button {
+  font-family: "Dosis", sans-serif;
+  padding: 5px 15px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.succ-cont button:hover {
+  background-color: rgb(152, 152, 198);
+  transition: 0.3s;
+}

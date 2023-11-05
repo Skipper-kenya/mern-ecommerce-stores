@@ -6,7 +6,8 @@ import { storeContext } from "../../context/StoreProvider";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { setCookie, setIsHover } = useContext(storeContext);
+  const { setCookie, setIsHover, isUserRedirected } =
+    useContext(storeContext);
 
   const navigate = useNavigate();
 
@@ -14,6 +15,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const [loading, setLoading] = useState(false);
+
+  const handleRedirection = () => {
+    if (isUserRedirected) {
+      return navigate("/cart");
+    } else {
+      return navigate("/");
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +40,7 @@ const Login = () => {
         if (action === "success") {
           setCookie("auth_token", token, { path: "/", maxAge: 43200 });
           window.localStorage.setItem("userId", userId);
-          navigate("/");
+          handleRedirection();
           setLoading(false);
           setIsHover(false);
         }

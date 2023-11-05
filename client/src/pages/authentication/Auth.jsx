@@ -1,10 +1,14 @@
 import { UserCircle } from "phosphor-react";
-import React from "react";
+import React, { useContext } from "react";
 import "./auth.css";
 
 import { Link } from "react-router-dom";
+import { storeContext } from "../../context/StoreProvider";
 
 const Auth = ({ name, btnName, u, p, su, sp, handleSubmit, loading }) => {
+ 
+ 
+
   return (
     <div className="auth-wrapper">
       <h3>{name} page</h3>
@@ -38,7 +42,7 @@ const Auth = ({ name, btnName, u, p, su, sp, handleSubmit, loading }) => {
           </div>
 
           <button onClick={handleSubmit}>
-            {loading ? "Loading..." : btnName}
+            {loading ? "Processing..." : btnName}
           </button>
           <p>
             {name === "Login" ? (
