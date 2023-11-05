@@ -45,13 +45,12 @@ const Navbar = () => {
       </div>
       <div className="top-right">
         <div className="home">
-          <NavLink activeclassname="active" to={"/"} className="home">
+          <NavLink activeclassname="active" to={"./"} className="home">
             <House size={20} /> Home
           </NavLink>
         </div>
         <div className="cart">
           <NavLink activeclassname="active" to={"/cart"} className="cart">
-            {" "}
             <ShoppingCart size={20} /> Cart
             <div className="cartNo">
               {cartNo.current > 0 ? cartNo.current : ""}
@@ -75,7 +74,6 @@ const Navbar = () => {
         ) : (
           <div className="login">
             <NavLink activeclassname="active" to={"/login"} className="login">
-              {" "}
               <User size={20} /> Login
             </NavLink>
           </div>
