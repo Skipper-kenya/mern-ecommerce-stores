@@ -1,6 +1,8 @@
 import express from "express";
 import stripePackage from "stripe";
 
+//https://server-ssvb.onrender.com/stripe/stripe_items
+
 import path from "path";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
@@ -20,6 +22,8 @@ const stripe = stripePackage(key);
 
 router.post("/stripe_items", async (req, res) => {
   const allData = await dataModel.find({});
+
+  console.log("we are receiving in the server!");
 
   const items = await req.body.items;
 

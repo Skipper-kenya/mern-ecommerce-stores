@@ -33,6 +33,7 @@ const Cart = () => {
   const handleCheckout = async () => {
     try {
       //code to export items array with several objects of items qty and id
+
       setLoading(true);
       for (let key in deliveryItems) {
         if (deliveryItems[key] > 0) {
