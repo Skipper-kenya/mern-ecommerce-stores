@@ -13,6 +13,7 @@ import { stripeRouter } from "./router/stripe.js";
 const server = express();
 
 //middlewares
+server.use(express.static("public"));
 server.use(express.json());
 server.use(cors());
 server.use("/get_data", dataRouter);
@@ -21,6 +22,8 @@ server.use("/stripe", stripeRouter);
 //port listening
 
 const port = process.env.PORT_URL;
+
+
 
 connectDb(() => {
   server.listen(port, console.log(`listening at port ${port}`));
