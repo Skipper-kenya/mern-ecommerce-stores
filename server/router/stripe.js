@@ -23,8 +23,6 @@ const stripe = stripePackage(key);
 router.post("/stripe_items", async (req, res) => {
   const allData = await dataModel.find({});
 
-  console.log("we are receiving in the server!");
-
   const items = await req.body.items;
 
   try {
@@ -46,7 +44,7 @@ router.post("/stripe_items", async (req, res) => {
       payment_method_types: ["card"],
       mode: "payment",
       line_items,
-      success_url: successPage,
+      success_url: process.env.SUCCESS_URL,
       cancel_url: process.env.CANCEL_URL,
     });
 

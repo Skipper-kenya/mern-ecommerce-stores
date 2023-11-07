@@ -34,7 +34,10 @@ const Cart = () => {
     try {
       //code to export items array with several objects of items qty and id
 
+      console.log("checkout reached");
+
       setLoading(true);
+
       for (let key in deliveryItems) {
         if (deliveryItems[key] > 0) {
           items.push({ id: Number(key), quantity: Number(deliveryItems[key]) });
