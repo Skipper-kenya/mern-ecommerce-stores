@@ -16,7 +16,7 @@ const server = express();
 server.use(express.json());
 server.use(
   cors({
-    origin: "https://mern-ecommerce-stores.vercel.app",
+    origin: process.env.CORS_ORIGIN,
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: "Content-Type,Authorization",
     credentials: true,
