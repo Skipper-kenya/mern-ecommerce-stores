@@ -23,8 +23,6 @@ server.use("/stripe", stripeRouter);
 
 const port = process.env.PORT_URL;
 
-
-
 connectDb(() => {
   server.listen(port, console.log(`listening at port ${port}`));
 });
