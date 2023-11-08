@@ -1,22 +1,12 @@
 import express from "express";
 import stripePackage from "stripe";
 
-//https://server-ssvb.onrender.com/stripe/stripe_items
-
-import path from "path";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 
 import dataModel from "../models/data.js";
 
 const router = express.Router();
 
 const key = process.env.STRIPE_KEY;
-
-const _filename = fileURLToPath(import.meta.url);
-const _dirname = dirname(_filename);
-
-const successPage = path.join(path.dirname(_dirname), "public", "index.html");
 
 const stripe = stripePackage(key);
 
