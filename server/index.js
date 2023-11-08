@@ -14,7 +14,14 @@ const server = express();
 
 //middlewares
 server.use(express.json());
-server.use(cors());
+server.use(
+  cors({
+    origin: "https://mern-ecommerce-stores.vercel.app/",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+    credentials: true,
+  })
+);
 server.use("/get_data", dataRouter);
 server.use("/auth", AuthRoute);
 server.use("/stripe", stripeRouter);
