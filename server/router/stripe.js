@@ -34,7 +34,7 @@ router.post("/stripe_items", async (req, res) => {
       payment_method_types: ["card"],
       mode: "payment",
       line_items,
-      success_url: process.env.CANCEL_URL,
+      success_url: process.env.SUCCESS_URL,
       cancel_url: process.env.CANCEL_URL,
     });
 
