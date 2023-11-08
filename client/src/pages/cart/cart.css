@@ -186,3 +186,38 @@
 .nothing-cart img {
   width: 300px;
 }
+
+@media only screen and (max-width: 767px) {
+  .cart-wrapper {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cart-items {
+    width: 76%;
+  }
+  .cart-logic {
+    font-size: 12px;
+    height: 150px;
+  }
+  .cartItem {
+    height: 190px;
+  }
+  .middle-cart{
+    width: 56%;
+  }
+  .right-cart{
+    width: 14%;
+    font-size: 14px;
+  }
+  .cartCheckout h3{
+    font-size: 18px;
+  }
+  .cartCheckout button{
+    padding: 6px;
+    font-size: 14px;
+  }
+  .cartCheckout h4{
+    font-size: 14px;
+  }
+}
