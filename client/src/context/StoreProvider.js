@@ -59,7 +59,7 @@ const StoreProvider = ({ children }) => {
     };
     fetchItems();
   }, []);
-
+//provi
   const addToCart = (id) => {
     setCart((prev) => ({ ...prev, [id]: prev[id] + 1 }));
     setDeliveryItems((prev) => ({ ...prev, [id]: prev[id] + 1 }));
